@@ -22,7 +22,7 @@ Update the 6-column schedule table (Time + Monday–Friday) without changing vis
 ### When Given Changes
 
 1. Parse intent (hide/show class, add New Class, set/remove Waitlist, change Teacher/Date/Time)
-2. Apply edits to `schedule.html`
+2. Apply edits to `index.html`
 3. Re-validate column count and close all tags
 4. Output the updated HTML or update the file directly
 
@@ -35,8 +35,15 @@ Update the 6-column schedule table (Time + Monday–Friday) without changing vis
 
 ## Key Files
 
-- `schedule.html` - Current schedule (edit this)
+- `index.html` - Current schedule (edit this)
 - `editing-cheatsheet.md` - Quick reference for HTML patterns
+
+## Deployment
+
+- GitHub repo: `danajc/little-wonders`
+- Live URL: https://danajc.github.io/little-wonders/
+- Embedded in Squarespace via iframe
+- Push to main → auto-deploys
 
 ## Common Tasks
 
