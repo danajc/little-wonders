@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Schedule Template</title>
+<style>
+  :root {
+    --border: #ccc;
+    --header-bg: #444;
+    --header-text: #fff;
+    --time-bg: #fff;
+    --text-dark: #333;
+    --highlight-yellow: #ffeb3b33;
+    --waitlist-red: #c00;
+  }
+
+  table.schedule {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    text-align: center;
+  }
+
+  /* Column widths controlled here */
+  .time-col { width: 12%; }
+  .day-col  { width: 17.6%; }
+
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  th {
+    background: var(--header-bg);
+    color: var(--header-text);
+    font-weight: 600;
+  }
+
+  /* Time cells */
+  td:first-child {
+    background: var(--time-bg);
+    color: var(--text-dark);
+    font-weight: 600;
+    border-right: 2px solid #ddd;
+    white-space: nowrap; /* keep AM/PM on one line */
+  }
+
+  /* Individual class visibility toggle (per cell) */
+  td[data-visible="false"] {
+    display: none;
+  }
+
+  /* Optional day tint helpers (use if desired) */
+  .monday { background: #d0ecbd; }
+  .tuesday { background: #fdf1a9; }
+  .wednesday { background: #d0ecbd; }
+  .thursday { background: #fdf1a9; }
+  .friday { background: #d0ecbd; }
+
+  /* Class color themes */
+  .blue   { background: #bfe3f4; }
+  .purple { background: #e7c4ec; }
+  .green  { background: #a8d18d; }
+  .orange { background: #fab972; }
+
+  /* Reusable labels */
+  .label {
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .label.waitlist { color: var(--waitlist-red); }
+  .label.virtual  { color: var(--waitlist-red); }
+  .label.newclass { color: #000; background: var(--highlight-yellow); }
+
+  /* Inline helpers */
+  .teacher { font-style: italic; color: #666; }
+  .dates   { color: #333; }
+  .age     { font-size: 13px; color: #444; }
+  .tbd     { opacity: 0.9; }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    table.schedule {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    th, td { padding: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<table class="schedule">
+  <colgroup>
+    <col class="time-col">
+    <col span="5" class="day-col">
+  </colgroup>
+
+  <tr>
+    <th>Time</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+  </tr>
+
+  <!-- 9:00 AM – 11:00 AM -->
+  <tr>
+    <td>9:00 AM – 11:00 AM</td>
+
+    <td class="blue" data-visible="true">
+      <strong>Mon Young Ones</strong><br>
+      <span class="age">10 – 16 mos</span><br>
+      <span class="dates">5/1/24 – 11/1/24</span><br>
+      <span class="teacher tbd">Teacher Maggie</span>
+    </td>
+
+    <td class="tuesday" data-visible="true">
+      <strong>Tue / Thu Twos<br>2-Day Offering</strong><br>
+      <span class="age">23 – 36 mos</span><br>
+      <span class="dates">9/1/22 – 10/1/23</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span><br>
+      <span class="label waitlist">Waitlist</span>
+    </td>
+
+    <td class="blue" data-visible="true">
+      <strong>Wed Ones</strong><br>
+      <span class="age">13 – 20 mos</span><br>
+      <span class="dates">1/1/24 – 8/1/24</span><br>
+      <span class="teacher tbd">Teacher Lisa</span>
+    </td>
+
+    <td class="thursday" data-visible="true">
+      <strong>Tue / Thu Twos<br>2-Day Offering</strong><br>
+      <span class="age">23 – 36 mos</span><br>
+      <span class="dates">9/1/22 – 10/1/23</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span><br>
+      <span class="label waitlist">Waitlist</span>
+    </td>
+
+    <td class="blue" data-visible="true">
+      <strong>Fri Ones</strong><br>
+      <span class="age">17 – 23 mos</span><br>
+      <span class="dates">10/1/23 – 4/1/24</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span><br>
+      <span class="label waitlist">Waitlist</span>
+    </td>
+  </tr>
+
+  <!-- 12:00 PM – 2:00 PM -->
+  <tr>
+    <td>12:00 PM – 2:00 PM</td>
+    <td data-visible="true"></td>
+    <td class="blue" data-visible="true">
+      <strong>Tuesday Young Ones</strong><br>
+      <span class="age">10 – 16 mos</span><br>
+      <span class="dates">9/1/24 – 5/1/25</span><br>
+      <span class="teacher tbd">Teacher Maggie</span><br>
+      <span class="label newclass">New Class</span>
+    </td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+  </tr>
+
+  <!-- 12:30 PM – 2:00 PM -->
+  <tr>
+    <td>12:30 PM – 2:00 PM</td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+    <td class="purple" data-visible="true">
+      <strong>Wed Baby Play</strong><br>
+      <span class="age">3 – 10 mos</span><br>
+      <span class="dates">5/1/25 – 10/1/25</span><br>
+      <span class="teacher tbd">Teacher Lisa</span>
+    </td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+  </tr>
+
+  <!-- 5:00 PM – 7:00 PM -->
+  <tr>
+    <td>5:00 PM – 7:00 PM</td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+    <td class="green" data-visible="true">
+      <strong>Thu Evening Mixed Ages</strong><br>
+      <span class="age">18 – 36 mos</span><br>
+      <span class="dates">9/1/22 – 3/1/24</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span>
+    </td>
+    <td data-visible="true"></td>
+  </tr>
+
+  <!-- 8:00 PM – 9:30 PM -->
+  <tr>
+    <td>8:00 PM – 9:30 PM</td>
+    <td data-visible="true"></td>
+    <td class="orange" data-visible="true">
+      <strong>Preschool Support</strong><br>
+      <span class="age">3 – 5 yrs</span><br>
+      <span class="dates">9/1/20 – 9/1/22</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span><br>
+      1st week of the month<br>
+      <span class="label virtual">Virtual Class</span><br><br>
+
+      <strong>Elementary Support</strong><br>
+      <span class="age">5 – 10 yrs</span><br>
+      <span class="dates">9/1/15 – 9/1/20</span><br>
+      <span class="teacher tbd">Teacher Suzanne</span><br>
+      3rd week of the month<br>
+      <span class="label virtual">Virtual Class</span>
+    </td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+    <td data-visible="true"></td>
+  </tr>
+</table>
+
+<!-- updated: 2025-11-12T19:50:14Z -->
+</body>
+</html>
