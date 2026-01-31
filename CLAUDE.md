@@ -45,6 +45,12 @@ Update the 6-column schedule table (Time + Monday–Friday) without changing vis
 - Embedded in Squarespace via iframe
 - Push to main → auto-deploys
 
+## Private Consultations Form
+
+- Squarespace form → Zapier → Google Sheets
+- Tracking sheet: https://docs.google.com/spreadsheets/d/1q32VEh-EFoysEymPDd_WswhvpDVgoNpPM9FYzYFiQyU/edit
+- **Annual task:** Update Zapier integration to push to new tab for each school year
+
 ## Common Tasks
 
 - **Hide a class**: Set `data-visible="false"` on the `<td>`
